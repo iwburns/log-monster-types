@@ -1,4 +1,3 @@
-
 export enum Level {
   Trace = 1,
   Debug = 2,
@@ -10,12 +9,12 @@ export enum Level {
 
 export interface Entry {
   level: Level,
-  group: String,
+  group: string,
   occurred: Date,
-  text: String,
+  text: string,
 }
 
-export function createEntry(level: Level, group: String, occurred: Date, text: String): Entry {
+export function createEntry(level: Level, group: string, occurred: Date, text: string): Entry {
   return {
     level,
     group,
@@ -26,5 +25,5 @@ export function createEntry(level: Level, group: String, occurred: Date, text: S
 
 export interface LoggingStrategy {
   log: (entry: Entry) => boolean;
-  find_logs: (level: String, group: String) => Array<Entry>;
+  findLogs: (level: Level, group: string) => Array<Entry>;
 }
